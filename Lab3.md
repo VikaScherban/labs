@@ -1,6 +1,7 @@
 #Laba2
 1.	За допомогою download.file() завантажте любий excel файл з порталу http://data.gov.ua та зчитайте його (xls, xlsx – бінарні формати, тому встановить mode = “wb”. Виведіть перші 6 строк отриманого фрейму даних.
 
+```r
 >install.packages("XML")
 > library(XML)
 > download.file("http://data.gov.ua/file/150098/download?token=J9U7YRrj", destfile="myfile.xml", mode = “wb”)
@@ -76,19 +77,24 @@
 4 РїРѕСЃР»СѓРіР°
 5 РїРѕСЃР»СѓРіР°
 6 РїРѕСЃР»СѓРіР°
+```
 
 2.	За допомогою download.file() завантажте файл getdata_data_ss06hid.csv за посиланням https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv та завантажте дані в R. Code book, що пояснює значення змінних знаходиться за посиланням https://www.dropbox.com/s/dijv0rlwo4mryv5/PUMSDataDict06.pdf?dl=0  Необхідно знайти, скільки property мають value $1000000+
 
+```r
 > download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="csvfile.csv")
 > X<-read.csv(file="csvfile.csv", header=TRUE)
 > sum(X$VAL > 1000000, na.rm = TRUE)
 [1] 0
+```
 
 3.	Зчитайте xml файл за посиланням http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Скільки ресторанів мають zipcode 21231?
+
+```r
 > library(XML)
 > download.file("http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml", destfile="file.xml")
 >doc = xmlParseDoc("file.xml")
 >listxml <- xpathSApply(doc,"//zipcode",xmlValue)
 > sum(listxml== 21231)
 [1] 127
-
+```
