@@ -1,10 +1,10 @@
-#Laba2
-1.	Çà äîïîìîãîþ download.file() çàâàíòàæòå ëþáèé excel ôàéë ç ïîðòàëó http://data.gov.ua òà ç÷èòàéòå éîãî (xls, xlsx – á³íàðí³ ôîðìàòè, òîìó âñòàíîâèòü mode = “wb”. Âèâåä³òü ïåðø³ 6 ñòðîê îòðèìàíîãî ôðåéìó äàíèõ.
+#Laba3
+1.	Ð—Ð° Ð´Ð¾Ð¿Ð¾Ð¼Ð¾Ð³Ð¾ÑŽ download.file() Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶Ñ‚Ðµ Ð»ÑŽÐ±Ð¸Ð¹ excel Ñ„Ð°Ð¹Ð» Ð· Ð¿Ð¾Ñ€Ñ‚Ð°Ð»Ñƒ http://data.gov.ua Ñ‚Ð° Ð·Ñ‡Ð¸Ñ‚Ð°Ð¹Ñ‚Ðµ Ð¹Ð¾Ð³Ð¾ (xls, xlsx â€“ Ð±Ñ–Ð½Ð°Ñ€Ð½Ñ– Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ð¸, Ñ‚Ð¾Ð¼Ñƒ Ð²ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ mode = â€œwbâ€. Ð’Ð¸Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð¿ÐµÑ€ÑˆÑ– 6 ÑÑ‚Ñ€Ð¾Ðº Ð¾Ñ‚Ñ€Ð¸Ð¼Ð°Ð½Ð¾Ð³Ð¾ Ñ„Ñ€ÐµÐ¹Ð¼Ñƒ Ð´Ð°Ð½Ð¸Ñ….
 
 ```r
 >install.packages("XML")
 > library(XML)
-> download.file("http://data.gov.ua/file/150098/download?token=J9U7YRrj", destfile="myfile.xml", mode = “wb”)
+> download.file("http://data.gov.ua/file/150098/download?token=J9U7YRrj", destfile="myfile.xml", mode = "wb")
 >xmldataframe <- xmlToDataFrame("myfile.xml")
 > head(xmldataframe,6)
   element
@@ -79,7 +79,7 @@
 6 Ð¿Ð¾ÑÐ»ÑƒÐ³Ð°
 ```
 
-2.	Çà äîïîìîãîþ download.file() çàâàíòàæòå ôàéë getdata_data_ss06hid.csv çà ïîñèëàííÿì https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv òà çàâàíòàæòå äàí³ â R. Code book, ùî ïîÿñíþº çíà÷åííÿ çì³ííèõ çíàõîäèòüñÿ çà ïîñèëàííÿì https://www.dropbox.com/s/dijv0rlwo4mryv5/PUMSDataDict06.pdf?dl=0  Íåîáõ³äíî çíàéòè, ñê³ëüêè property ìàþòü value $1000000+
+2.	Ð—Ð° Ð´Ð¾Ð¿Ð¾Ð¼Ð¾Ð³Ð¾ÑŽ download.file() Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶Ñ‚Ðµ Ñ„Ð°Ð¹Ð» getdata_data_ss06hid.csv Ð·Ð° Ð¿Ð¾ÑÐ¸Ð»Ð°Ð½Ð½ÑÐ¼ https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv Ñ‚Ð° Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶Ñ‚Ðµ Ð´Ð°Ð½Ñ– Ð² R. Code book, Ñ‰Ð¾ Ð¿Ð¾ÑÑÐ½ÑŽÑ” Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ Ð·Ð¼Ñ–Ð½Ð½Ð¸Ñ… Ð·Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑŒÑÑ Ð·Ð° Ð¿Ð¾ÑÐ¸Ð»Ð°Ð½Ð½ÑÐ¼ https://www.dropbox.com/s/dijv0rlwo4mryv5/PUMSDataDict06.pdf?dl=0  ÐÐµÐ¾Ð±Ñ…Ñ–Ð´Ð½Ð¾ Ð·Ð½Ð°Ð¹Ñ‚Ð¸, ÑÐºÑ–Ð»ÑŒÐºÐ¸ property Ð¼Ð°ÑŽÑ‚ÑŒ value $1000000+
 
 ```r
 > download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="csvfile.csv")
@@ -88,7 +88,7 @@
 [1] 0
 ```
 
-3.	Ç÷èòàéòå xml ôàéë çà ïîñèëàííÿì http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Ñê³ëüêè ðåñòîðàí³â ìàþòü zipcode 21231?
+3.Ð—Ñ‡Ð¸Ñ‚Ð°Ð¹Ñ‚Ðµ xml Ñ„Ð°Ð¹Ð» Ð·Ð° Ð¿Ð¾ÑÐ¸Ð»Ð°Ð½Ð½ÑÐ¼ http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Ð¡ÐºÑ–Ð»ÑŒÐºÐ¸ Ñ€ÐµÑÑ‚Ð¾Ñ€Ð°Ð½Ñ–Ð² Ð¼Ð°ÑŽÑ‚ÑŒ zipcode 21231?
 
 ```r
 > library(XML)
