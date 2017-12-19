@@ -64,6 +64,6 @@ mat<-matrix(rnorm(50),10,5)
 
 7.Вивести вектор з булевими значеннями TRUE та FALSE. TRUE, якщо в стовпці є елементи >2, FALSE – якщо немає.
 ```r
-> apply(mat, 2, function(x) all(x>2))
+> apply(mat, 2, function(x) if(length(x[x>2])>=1) TRUE else FALSE)
 [1] FALSE FALSE FALSE FALSE FALSE
 ```

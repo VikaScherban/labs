@@ -50,8 +50,8 @@
 
 6.Знайдіть час початку події та її тривалість. Для цього з групи meta зчитайте в змінну gpsStart  name GPSstart та в змінну duration name Duration.
 ```r
->gpsStart<-h5readAttributes("/Users/stranger/Downloads/file.hdf5", "/meta/GPSstart")
-> duration<-h5readAttributes("/Users/stranger/Downloads/file.hdf5", "/meta/Duration")
+>gpsStart <- h5read("/Users/stranger/Downloads/file.hdf5", "/meta/GPSstart")
+> duration<-h5read("/Users/stranger/Downloads/file.hdf5", "/meta/Duration")
 ```
 
 7.Знайдіть час закінчення події та збережіть його в змінну gpsEnd.
@@ -69,5 +69,9 @@
 >numSamples<-1000000
 ```
 
-10.Побудуйте графік за допомогою функції plot(myTime[0:numSamples], strain[0:numSamples], type = "l", xlab = "GPS Time (s)", ylab = "H1 Strain")
+10.Побудуйте графік за допомогою функції 
+```r
+>plot(myTime[0:numSamples], strain[0:numSamples], type = "l", xlab = "GPS Time (s)", ylab = "H1 Strain")
+```
+
 

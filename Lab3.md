@@ -84,8 +84,9 @@
 ```r
 > download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="csvfile.csv")
 > X<-read.csv(file="csvfile.csv", header=TRUE)
-> sum(X$VAL > 1000000, na.rm = TRUE)
-[1] 0
+>v <- lapply(X, function(x) if (!is.na(x) && x==24) 1 else 0)
+>length(v[v==1])
+[1] 4
 ```
 
 3.Зчитайте xml файл за посиланням http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Скільки ресторанів мають zipcode 21231?
