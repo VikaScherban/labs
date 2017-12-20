@@ -87,7 +87,7 @@
 >v<-X$VAL
 >v <- lapply(v, function(x) if (!is.na(x) && x==24) 1 else 0)
 >length(v[v==1])
-[1] 4
+[1] 32
 ```
 
 3.Зчитайте xml файл за посиланням http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml Скільки ресторанів мають zipcode 21231?
