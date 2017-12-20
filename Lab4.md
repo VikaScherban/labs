@@ -46,17 +46,25 @@
 ```r
 > st<-h5readAttributes("/Users/stranger/Downloads/file.hdf5", "/strain/Strain")
 > st<-st$Xspacing
+> st
+[1] 0.0002441406
 ```
 
 6.Знайдіть час початку події та її тривалість. Для цього з групи meta зчитайте в змінну gpsStart  name GPSstart та в змінну duration name Duration.
 ```r
 >gpsStart <- h5read("/Users/stranger/Downloads/file.hdf5", "/meta/GPSstart")
+> gpsStart
+[1] 1187006834
 > duration<-h5read("/Users/stranger/Downloads/file.hdf5", "/meta/Duration")
+duration
+[1] 4096
 ```
 
 7.Знайдіть час закінчення події та збережіть його в змінну gpsEnd.
 ```r
 > gpsEnd<-as.integer(gpsStart) + as.integer(duration)
+> gpsEnd
+[1] 1187010930
 ```
 
 8.Створіть вектор з часу вимірів і збережіть у змінну myTime. Початок послідовності – gpsStart, кінець – gpsEnd, крок – st.

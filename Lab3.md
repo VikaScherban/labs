@@ -84,7 +84,8 @@
 ```r
 > download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="csvfile.csv")
 > X<-read.csv(file="csvfile.csv", header=TRUE)
->v <- lapply(X, function(x) if (!is.na(x) && x==24) 1 else 0)
+>v<-X$VAL
+>v <- lapply(v, function(x) if (!is.na(x) && x==24) 1 else 0)
 >length(v[v==1])
 [1] 4
 ```
